@@ -16,3 +16,17 @@ EList *newLinkedList()
 {
     return NULL;
 }
+
+/*
+ * Função para adicionar um elemento no inicio da lista
+ * 
+ * param elementList: referencia para um ponteiro de um elemento da lista
+ * param value: valor a ser adicionado na lista
+ * 
+ * return true: se conseguiu adicionar
+ * return false: se não conseguiu adicionar
+*/
+Bool addElementLinkedList(EList **elementList, int value)
+{
+    
+}
