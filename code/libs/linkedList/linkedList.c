@@ -149,3 +149,16 @@ Bool removeFirstList(EList **element_list)
 
     return true;
 }
+
+/*
+ * Função para remover o último elemento da lista
+ * 
+ * param element_list: referencia para um ponteiro de um elemento da lista
+ * 
+ * return true: se conseguiu remover
+ * return false: se não conseguiu remover
+*/
+Bool removeLastList(EList **element_list)
+{
+
+}
