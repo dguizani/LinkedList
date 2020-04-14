@@ -127,3 +127,16 @@ Bool addIndexList(EList **elementList, int value, unsigned int posX)
 
     return true;
 }
+
+/*
+ * Função para remover o primeiro elemento da lista
+ * 
+ * param elementList: referencia para um ponteiro de um elemento da lista
+ * 
+ * return true: se conseguiu remover
+ * return false: se não conseguiu remover
+*/
+Bool removeFirstList(EList **elementList)
+{
+
+}
