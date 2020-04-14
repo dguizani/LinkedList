@@ -95,3 +95,18 @@ Bool addLastList(EList **elementList, int value)
 
     return true;
 }
+
+/*
+ * Função para adicionar um elemento na posição desejada da lista
+ * 
+ * param elementList: referencia para um ponteiro de um elemento da lista
+ * param value: valor a ser adicionado na lista
+ * param posX: posição a ser adicionado o elemento na lista
+ * 
+ * return true: se conseguiu adicionar
+ * return false: se não conseguiu adicionar
+*/
+Bool addIndexList(EList **elementList, int value, int posX)
+{
+
+}
