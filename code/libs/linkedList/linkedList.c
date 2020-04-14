@@ -65,3 +65,17 @@ Bool addFirstList(EList **elementList, int value)
 
     return true;
 }
+
+/*
+ * Função para adicionar um elemento no fim da lista
+ * 
+ * param elementList: referencia para um ponteiro de um elemento da lista
+ * param value: valor a ser adicionado na lista
+ * 
+ * return true: se conseguiu adicionar
+ * return false: se não conseguiu adicionar
+*/
+Bool addLastList(EList **elementList, int value)
+{
+
+}
