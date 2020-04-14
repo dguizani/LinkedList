@@ -12,7 +12,7 @@ typedef struct linkedList
  * 
  * return NULL: sempre
 */
-EList *newLinkedList()
+EList *newList()
 {
     return NULL;
 }
@@ -160,5 +160,16 @@ Bool removeFirstList(EList **element_list)
 */
 Bool removeLastList(EList **element_list)
 {
+    if (listIsEmpty(element_list))
+        return false;
+    
+    EList *current = *element_list;
+    for (current; current -> next != NULL; current = current -> next);
 
+    if (current == *element_list)
+        *element_list = newList();
+
+    free(current);
+
+    return true;
 }
