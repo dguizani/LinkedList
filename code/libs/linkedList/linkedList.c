@@ -17,6 +17,14 @@ EList *newLinkedList()
     return NULL;
 }
 
+/*
+ * Função para testar se a posição da lista está vazia
+ * 
+ * param elementList: referencia para um ponteiro de um elemento da lista
+ * 
+ * return true: se está vazia
+ * return false: se não está vazia
+*/
 Bool listIsEmpty(EList **elementList)
 {
     if (*elementList == NULL)
@@ -36,5 +44,24 @@ Bool listIsEmpty(EList **elementList)
 */
 Bool addFirstList(EList **elementList, int value)
 {
+    EList *new = (EList *) malloc(sizeof(EList));
 
+    if (listIsEmpty(&new))
+        return false;
+    
+    new -> value = value;
+
+    if (listIsEmpty(elementList))
+    {
+        new -> next = NULL;
+        *elementList = new;
+
+        return true;
+    }
+
+    new -> next = *elementList;
+
+    *elementList = new;
+
+    return true;
 }
