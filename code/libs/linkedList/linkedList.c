@@ -17,6 +17,14 @@ EList *newLinkedList()
     return NULL;
 }
 
+Bool listIsEmpty(EList **elementList)
+{
+    if (*elementList == NULL)
+        return true;
+    
+    return false;
+}
+
 /*
  * Função para adicionar um elemento no inicio da lista
  * 
