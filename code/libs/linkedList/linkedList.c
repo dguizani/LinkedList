@@ -106,7 +106,24 @@ Bool addLastList(EList **elementList, int value)
  * return true: se conseguiu adicionar
  * return false: se não conseguiu adicionar
 */
-Bool addIndexList(EList **elementList, int value, int posX)
+Bool addIndexList(EList **elementList, int value, unsigned int posX)
 {
+    if (listIsEmpty(elementList) || posX == 0)
+        return addFirstList(elementList, value);
+    
+    EList *new = (EList *) malloc(sizeof(EList));
 
+    if (listIsEmpty(&new))
+        return false;
+
+    EList *current = *elementList;
+    for (current; current -> next != NULL || posX == 1; current = current -> next)
+        posX -= 1;
+
+    new -> value = value;
+    new -> next = current -> next;
+
+    current -> next = new;
+
+    return true;
 }
