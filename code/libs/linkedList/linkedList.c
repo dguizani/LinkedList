@@ -26,7 +26,7 @@ EList *newLinkedList()
  * return true: se conseguiu adicionar
  * return false: se não conseguiu adicionar
 */
-Bool addElementLinkedList(EList **elementList, int value)
+Bool addFirstList(EList **elementList, int value)
 {
-    
+
 }
