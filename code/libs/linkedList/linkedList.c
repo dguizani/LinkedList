@@ -77,5 +77,21 @@ Bool addFirstList(EList **elementList, int value)
 */
 Bool addLastList(EList **elementList, int value)
 {
+    if (listIsEmpty(elementList))
+        return addFirstList(elementList, value);
+    
+    EList *new = (EList *) malloc(sizeof(EList));
 
+    if (listIsEmpty(&new))
+        return false;
+    
+    new -> value = value;
+    new -> next = NULL;
+
+    EList *aux = *elementList;
+    for (aux; aux -> next != NULL; aux = aux -> next);
+    
+    aux -> next = new;
+
+    return true;
 }
