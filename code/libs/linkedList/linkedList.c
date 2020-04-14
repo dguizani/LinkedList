@@ -164,10 +164,14 @@ Bool removeLastList(EList **element_list)
         return false;
     
     EList *current = *element_list;
-    for (current; current -> next != NULL; current = current -> next);
+    EList *previous = NULL;
+    for (current; current -> next != NULL; current = current -> next)
+        previous = current;
 
     if (current == *element_list)
         *element_list = newList();
+    else
+        previous -> next = current -> next;
 
     free(current);
 
