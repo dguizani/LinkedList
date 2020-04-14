@@ -173,3 +173,17 @@ Bool removeLastList(EList **element_list)
 
     return true;
 }
+
+/*
+ * Função para remover um elemento qualquer da lista
+ * 
+ * param element_list: referencia para um ponteiro de um elemento da lista
+ * param posX: posição a ser removida
+ * 
+ * return true: se conseguiu remover
+ * return false: se não conseguiu remover
+*/
+Bool removeIndexList(EList **element_list, unsigned int posX)
+{
+
+}
