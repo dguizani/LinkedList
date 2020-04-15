@@ -229,3 +229,16 @@ unsigned int lenList(EList **element_list)
     
     return len;
 }
+
+/*
+ * Função para se obter um elemento da lista
+ * 
+ * param element_list: referencia para um ponteiro de um elemento da lista
+ * 
+ * return Elist *: se encontrou o elemento
+ * return NULL: se não encontrou o elemento
+*/
+EList *getElementList(EList **element_list, unsigned int posX)
+{
+
+}
