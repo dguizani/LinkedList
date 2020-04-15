@@ -136,7 +136,7 @@ Bool addIndexList(EList **element_list, int value, unsigned int posX)
  * return true: se conseguiu remover
  * return false: se não conseguiu remover
 */
-Bool removeFirstList(EList **element_list)
+Bool delFirstList(EList **element_list)
 {
     if (listIsEmpty(element_list))
         return false;
@@ -158,7 +158,7 @@ Bool removeFirstList(EList **element_list)
  * return true: se conseguiu remover
  * return false: se não conseguiu remover
 */
-Bool removeLastList(EList **element_list)
+Bool delLastList(EList **element_list)
 {
     if (listIsEmpty(element_list))
         return false;
@@ -187,7 +187,7 @@ Bool removeLastList(EList **element_list)
  * return true: se conseguiu remover
  * return false: se não conseguiu remover
 */
-Bool removeIndexList(EList **element_list, unsigned int posX)
+Bool delIndexList(EList **element_list, unsigned int posX)
 {
     if (listIsEmpty(element_list))
         return false;
@@ -220,7 +220,7 @@ Bool removeIndexList(EList **element_list, unsigned int posX)
  * 
  * return qty_removed: quantidade de elementos removidos
 */
-unsigned int removeAllList(EList **element_List)
+unsigned int delAllList(EList **element_List)
 {
     unsigned int qty_removed = 0;
 
