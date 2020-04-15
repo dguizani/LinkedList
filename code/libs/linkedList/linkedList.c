@@ -193,7 +193,7 @@ Bool delIndexList(EList **element_list, unsigned int posX)
         return false;
     
     if (posX == 0)
-        return removeFirstList(element_list);
+        return delFirstList(element_list);
 
     EList *current = *element_list;
     EList *previous = NULL;

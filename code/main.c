@@ -3,10 +3,11 @@
 #include "./libs/linkedList/linkedList.c"
 
 #define limparTela() system("cls")
+#define Q_DIGITOS 10
 
 int main(int argc, char const *argv[])
 {
-    char opcao;
+    char opcao, posX[Q_DIGITOS + 1], valor[Q_DIGITOS + 1];
 
     EList *lista = newList();
 
@@ -50,18 +51,45 @@ int main(int argc, char const *argv[])
 
                 if (opcao == '1')
                 {
+                    printf("\n Digite o valor a ser adicionado: ");
+                    scanf(" %[^\n]s", valor);
 
+                    if (addFirstList(&lista, atoi(valor)))
+                        printf("\n Elemento adicionado.\n");
+                    
+                    else
+                        printf("\n Impossivel adicionar.\n");
                 }
 
                 else if (opcao == '2')
                 {
+                    printf("\n Digite o valor a ser adicionado: ");
+                    scanf(" %[^\n]s", valor);
 
+                    if (addLastList(&lista, atoi(valor)))
+                        printf("\n Elemento adicionado.\n");
+                    
+                    else
+                        printf("\n Impossivel adicionar.\n");
                 }
 
                 else if (opcao == '3')
                 {
+                    printf("\n Digite o valor a ser adicionado: ");
+                    scanf(" %[^\n]s", valor);
+                    
+                    printf("\n Digite a posicao a ser adicionada: ");
+                    scanf(" %[^\n]s", posX);
 
+                    if (addIndexList(&lista, atoi(valor), atoi(posX)))
+                        printf("\n Elemento adicionado.\n");
+                    
+                    else
+                        printf("\n Impossivel adicionar.\n");
                 }
+
+                limparTela();
+
             } while (opcao != '0');
 
             opcao = ' ';
@@ -101,6 +129,9 @@ int main(int argc, char const *argv[])
                 {
 
                 }
+
+                limparTela();
+
             } while (opcao != '0');
 
             opcao = ' ';
@@ -140,6 +171,9 @@ int main(int argc, char const *argv[])
                 {
 
                 }
+
+                limparTela();
+
             } while (opcao != '0');
 
             opcao = ' ';
