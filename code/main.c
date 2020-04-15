@@ -93,6 +93,12 @@ int main(int argc, char const *argv[])
                         printf("\n Impossivel adicionar.\n");
                 }
 
+                if (opcao != '0')
+                {
+                    printf("\n\n ");
+                    pausar();
+                }
+
                 limparTela();
 
             } while (opcao != '0');
@@ -117,23 +123,47 @@ int main(int argc, char const *argv[])
                 do
                 {
                     opcao = getch();
-                } while (!(opcao >= '0' && opcao <= '3'));
+                } while (!(opcao >= '0' && opcao <= '4'));
 
                 limparTela();
 
                 if (opcao == '1')
                 {
-
+                    if (delFirstList(&lista))
+                        printf("\n Elemento Removido.\n");
+                    else
+                        printf("\n Impossivel remover.\n");
                 }
 
                 else if (opcao == '2')
                 {
-
+                    if (delLastList(&lista))
+                        printf("\n Elemento Removido.\n");
+                    else
+                        printf("\n Impossivel remover.\n");
                 }
 
                 else if (opcao == '3')
                 {
+                    printf("\n Digite.\n");
+                    printf(" Posicao: ");
+                    scanf(" %[^\n]s", posX);
 
+                    if (delIndexList(&lista, atoi(posX)))
+                        printf("\n Elemento Removido.\n");
+                    else
+                        printf("\n Impossivel remover.\n");
+                }
+
+                else if (opcao == '4')
+                {
+                    printf("\n %d elementos removidos.\n", delAllList(&lista));
+                }
+
+                if (opcao != '0')
+                {
+                    printf("\n\n ");
+                    pausar();
                 }
 
                 limparTela();
@@ -168,9 +198,6 @@ int main(int argc, char const *argv[])
                     int index = 0;
                     for (EList *aux = lista; aux != NULL; aux = aux -> next)
                         printf("\n %03d: %d", index++, aux -> value);
-
-                    printf("\n\n ");
-                    pausar();
                 }
 
                 else if (opcao == '2')
@@ -189,9 +216,6 @@ int main(int argc, char const *argv[])
                         printf("\n %03d: %d", index, aux -> value);
                     else
                         printf("\n Index inexistente.");
-
-                    printf("\n\n ");
-                    pausar();
                 }
 
                 else if (opcao == '3')
@@ -208,7 +232,10 @@ int main(int argc, char const *argv[])
                         printf("\n %03d: %d", i, aux -> value);
                         aux = aux -> next;
                     }
+                }
 
+                if (opcao != '0')
+                {
                     printf("\n\n ");
                     pausar();
                 }
