@@ -117,7 +117,7 @@ Bool addIndexList(EList **element_list, int value, unsigned int posX)
         return false;
 
     EList *current = *element_list;
-    for (current; current -> next != NULL || posX != 1; current = current -> next)
+    for (current; current -> next != NULL && posX != 1; current = current -> next)
         posX -= 1;
 
     new -> value = value;
@@ -197,7 +197,7 @@ Bool delIndexList(EList **element_list, unsigned int posX)
 
     EList *current = *element_list;
     EList *previous = NULL;
-    for (current; current != NULL || posX != 0; current = current -> next)
+    for (current; current != NULL && posX != 0; current = current -> next)
     {
         previous = current;
         posX -= 1;
@@ -267,7 +267,7 @@ unsigned int lenList(EList **element_list)
 EList *getElementList(EList **element_list, unsigned int posX)
 {    
     EList *aux = *element_list;
-    for (aux; aux != NULL || posX != 0; aux = aux -> next)
+    for (aux; aux != NULL && posX != 0; aux = aux -> next)
         posX -= 1;
     
     return aux;
