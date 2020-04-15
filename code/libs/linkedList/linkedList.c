@@ -239,6 +239,10 @@ unsigned int lenList(EList **element_list)
  * return NULL: se não encontrou o elemento
 */
 EList *getElementList(EList **element_list, unsigned int posX)
-{
-
+{    
+    EList *aux = *element_list;
+    for (aux; aux != NULL || posX != 0; aux = aux -> next)
+        posX -= 1;
+    
+    return aux;
 }
