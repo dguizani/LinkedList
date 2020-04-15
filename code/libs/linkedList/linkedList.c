@@ -222,7 +222,21 @@ Bool removeIndexList(EList **element_list, unsigned int posX)
 */
 unsigned int removeAllList(EList **element_List)
 {
+    unsigned int qty_removed = 0;
 
+    EList *aux = *element_List;
+    while (*element_List != NULL)
+    {
+        *element_List = (*element_List) -> next;
+
+        free(aux);
+
+        aux = *element_List;
+
+        qty_removed += 1;
+    }
+    
+    return qty_removed;
 }
 
 /*
