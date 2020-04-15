@@ -3,6 +3,8 @@
 #include "./libs/linkedList/linkedList.c"
 
 #define limparTela() system("cls")
+#define pausar() system("pause")
+
 #define Q_DIGITOS 10
 
 int main(int argc, char const *argv[])
@@ -159,7 +161,11 @@ int main(int argc, char const *argv[])
 
                 if (opcao == '1')
                 {
+                    for (EList *aux = lista; aux != NULL; aux = aux -> next)
+                        printf("\n %p: %d", aux, aux -> value);
 
+                    printf("\n\n ");
+                    pausar();
                 }
 
                 else if (opcao == '2')
