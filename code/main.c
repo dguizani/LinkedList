@@ -8,6 +8,8 @@ int main(int argc, char const *argv[])
 {
     char opcao;
 
+    EList *lista = newList();
+
     do
     {
         printf("\n +-----------------------------------+");
