@@ -222,5 +222,10 @@ Bool removeIndexList(EList **element_list, unsigned int posX)
 */
 unsigned int lenList(EList **element_list)
 {
+    unsigned int len = 0;
 
+    for (EList *aux = *element_list; aux != NULL; aux = aux -> next)
+        len += 1;
+    
+    return len;
 }
