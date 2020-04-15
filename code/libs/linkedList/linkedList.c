@@ -214,6 +214,18 @@ Bool removeIndexList(EList **element_list, unsigned int posX)
 }
 
 /*
+ * Função para remover todos os elementos da lista
+ * 
+ * param element_list: referencia para um ponteiro de um elemento da lista
+ * 
+ * return qty_removed: quantidade de elementos removidos
+*/
+unsigned int removeAllList(EList **element_List)
+{
+
+}
+
+/*
  * Função para obter quantos elementos existem na lista
  * 
  * param element_list: referencia para um ponteiro de um elemento da lista
