@@ -53,7 +53,8 @@ int main(int argc, char const *argv[])
 
                 if (opcao == '1')
                 {
-                    printf("\n Digite o valor a ser adicionado: ");
+                    printf("\n Digite.\n");
+                    printf("\n Valor: ");
                     scanf(" %[^\n]s", valor);
 
                     if (addFirstList(&lista, atoi(valor)))
@@ -65,7 +66,8 @@ int main(int argc, char const *argv[])
 
                 else if (opcao == '2')
                 {
-                    printf("\n Digite o valor a ser adicionado: ");
+                    printf("\n Digite.\n");
+                    printf("\n Valor: ");
                     scanf(" %[^\n]s", valor);
 
                     if (addLastList(&lista, atoi(valor)))
@@ -77,10 +79,11 @@ int main(int argc, char const *argv[])
 
                 else if (opcao == '3')
                 {
-                    printf("\n Digite o valor a ser adicionado: ");
+                    printf("\n Digite.\n");
+                    printf("\n Valor: ");
                     scanf(" %[^\n]s", valor);
                     
-                    printf("\n Digite a posicao a ser adicionada: ");
+                    printf(" Posicao: ");
                     scanf(" %[^\n]s", posX);
 
                     if (addIndexList(&lista, atoi(valor), atoi(posX)))
@@ -107,6 +110,7 @@ int main(int argc, char const *argv[])
                 printf("\n | 1 | Do inicio                     |");
                 printf("\n | 2 | Do fim                        |");
                 printf("\n | 3 | Do index                      |");
+                printf("\n | 4 | Todos                         |");
                 printf("\n | 0 | Voltar                        |");
                 printf("\n +---+-------------------------------+");
 
@@ -161,8 +165,9 @@ int main(int argc, char const *argv[])
 
                 if (opcao == '1')
                 {
+                    int index = 0;
                     for (EList *aux = lista; aux != NULL; aux = aux -> next)
-                        printf("\n %p: %d", aux, aux -> value);
+                        printf("\n %03d: %d", index++, aux -> value);
 
                     printf("\n\n ");
                     pausar();
@@ -170,12 +175,42 @@ int main(int argc, char const *argv[])
 
                 else if (opcao == '2')
                 {
+                    printf("\n Digite.\n");
+                    printf("\n Posicao: ");
+                    scanf(" %[^\n]s", posX);
 
+                    int index = atoi(posX);
+
+                    EList *aux = lista;
+                    for (int i = 0; i < index && aux != NULL; i++)
+                        aux = aux -> next;
+
+                    if (aux != NULL)
+                        printf("\n %03d: %d", index, aux -> value);
+                    else
+                        printf("\n Index inexistente.");
+
+                    printf("\n\n ");
+                    pausar();
                 }
 
                 else if (opcao == '3')
                 {
+                    printf("\n Digite.\n");
+                    printf("\n Quantidade de elementos: ");
+                    scanf(" %[^\n]s", posX);
 
+                    int index = atoi(posX);
+
+                    EList *aux = lista;
+                    for (int i = 0; i < index && aux != NULL; i++)
+                    {
+                        printf("\n %03d: %d", i, aux -> value);
+                        aux = aux -> next;
+                    }
+
+                    printf("\n\n ");
+                    pausar();
                 }
 
                 limparTela();
