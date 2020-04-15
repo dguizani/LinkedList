@@ -61,7 +61,7 @@ int main(int argc, char const *argv[])
 
                 }
             } while (opcao != '0');
-            
+
             opcao = ' ';
         }
 
@@ -84,7 +84,7 @@ int main(int argc, char const *argv[])
                 } while (!(opcao >= '0' && opcao <= '3'));
 
                 limparTela();
-                
+
                 if (opcao == '1')
                 {
 
@@ -100,7 +100,7 @@ int main(int argc, char const *argv[])
 
                 }
             } while (opcao != '0');
-            
+
             opcao = ' ';
         }
 
@@ -123,7 +123,7 @@ int main(int argc, char const *argv[])
                 } while (!(opcao >= '0' && opcao <= '3'));
 
                 limparTela();
-                
+
                 if (opcao == '1')
                 {
 
@@ -139,7 +139,7 @@ int main(int argc, char const *argv[])
 
                 }
             } while (opcao != '0');
-            
+
             opcao = ' ';
         }
 
