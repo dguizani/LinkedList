@@ -10,7 +10,7 @@ typedef struct linkedList
 /*
  * Função para iniciar uma nova lista
  * 
- * return NULL: sempre
+ * return NULL: lista vazia
 */
 EList *newList()
 {
@@ -211,4 +211,16 @@ Bool removeIndexList(EList **element_list, unsigned int posX)
     free(current);
 
     return true;
+}
+
+/*
+ * Função para obter quantos elementos existem na lista
+ * 
+ * param element_list: referencia para um ponteiro de um elemento da lista
+ * 
+ * return len: tamanho da lista
+*/
+unsigned int lenList(EList **element_list)
+{
+
 }
