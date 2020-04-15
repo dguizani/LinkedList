@@ -117,7 +117,7 @@ Bool addIndexList(EList **element_list, int value, unsigned int posX)
         return false;
 
     EList *current = *element_list;
-    for (current; current -> next != NULL || posX == 1; current = current -> next)
+    for (current; current -> next != NULL || posX != 1; current = current -> next)
         posX -= 1;
 
     new -> value = value;
@@ -189,5 +189,26 @@ Bool removeLastList(EList **element_list)
 */
 Bool removeIndexList(EList **element_list, unsigned int posX)
 {
+    if (listIsEmpty(element_list))
+        return false;
+    
+    if (posX == 0)
+        return removeFirstList(element_list);
 
+    EList *current = *element_list;
+    EList *previous = NULL;
+    for (current; current != NULL || posX != 0; current = current -> next)
+    {
+        previous = current;
+        posX -= 1;
+    }
+
+    if (current == NULL)
+        return false;
+
+    previous -> next = current -> next;
+
+    free(current);
+
+    return true;
 }
